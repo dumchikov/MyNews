@@ -11,6 +11,7 @@ namespace MyNews.Models
 
         public NewsItem(SyndicationItem item)
         {
+            Id = Guid.NewGuid().ToString();
             Title = item.Title.Text;
             Link = item.Links[0].Uri.AbsoluteUri;
             PublishDate = item.PublishDate.DateTime;
@@ -20,8 +21,10 @@ namespace MyNews.Models
             {
                 ImageUrl = links[1].Uri.AbsoluteUri;
             }
-            
         }
+
+        public string Id { get; set; }
+
         public string Title { get; set; }
 
         public string Description { get; set; }

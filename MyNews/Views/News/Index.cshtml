@@ -52,15 +52,15 @@
 
                         <span class="muted"><em>@m.PublishDate.ToString()</em></span>
 
-                        <div id="@Model.ToList().IndexOf(m)l"></div>
+                        <div id="@m.Id"></div>
                         <script type="text/javascript">
-                            VK.Widgets.Like("@Model.ToList().IndexOf(m)l", {
+                            VK.Widgets.Like("@m.Id", {
                                 type: "mini",
                                 height: 18,
                                 pageTitle: "My news - создай свои новости!",
                                 text: "@m.Description",
                                 pageDescription: "@m.Description"
-                            });
+                            }, @m.Id );
                         </script>
 
 
