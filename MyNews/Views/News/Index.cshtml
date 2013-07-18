@@ -30,12 +30,12 @@
                 }
             });
         </script>*@
-        
+@*        
                                 <!-- Put this div tag to the place, where the Comments block will be -->
                         <div id="comments"></div>
                         <script type="text/javascript">
-                            VK.Widgets.Comments("comments", { limit: 10, width: "520", attach: "*" });
-                        </script>
+                            VK.Widgets.Comments("comments", { limit: 10, width: "200", attach: "*" });
+                        </script>*@
 
     </div>
     <div class="span8">
@@ -54,7 +54,13 @@
 
                         <div id="@Model.ToList().IndexOf(m)l"></div>
                         <script type="text/javascript">
-                            VK.Widgets.Like("@Model.ToList().IndexOf(m)l", { type: "mini", height: 18 });
+                            VK.Widgets.Like("@Model.ToList().IndexOf(m)l", {
+                                type: "mini",
+                                height: 18,
+                                pageTitle: "My news - создай свои новости!",
+                                text: "@m.Description",
+                                pageDescription: "@m.Description"
+                            });
                         </script>
 
 
