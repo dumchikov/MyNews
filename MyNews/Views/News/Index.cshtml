@@ -46,16 +46,16 @@
 
                         <span class="muted"><em>@m.PublishDate.ToString()</em></span>
                         <!-- Put this div tag to the place, where the Like block will be -->
-                        <div id="vk_like"></div>
+                        <div id="@Model.ToList().IndexOf(m)l"></div>
                         <script type="text/javascript">
-                            VK.Widgets.Like("vk_like", { type: "mini", height: 18 });
+                            VK.Widgets.Like("@Model.ToList().IndexOf(m)l", { type: "mini", height: 18 });
                         </script>
-                        
+
                         <!-- Put this div tag to the place, where the Comments block will be -->
-<div id="vk_comments"></div>
-<script type="text/javascript">
-    VK.Widgets.Comments("vk_comments", { limit: 10, width: "520", attach: "*" });
-</script>
+                        <div id="@Model.ToList().IndexOf(m)c"></div>
+                        <script type="text/javascript">
+                            VK.Widgets.Comments("@Model.ToList().IndexOf(m)c", { limit: 10, width: "520", attach: "*" });
+                        </script>
                     </td>
                 </tr>
             }
