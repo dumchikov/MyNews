@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNews.Web", "MyNews\MyNews.Web.csproj", "{C444BCCB-CF47-470A-B150-101FCB6DA351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNews.Services", "MyNews.Services\MyNews.Services.csproj", "{1A99D3C7-98CE-4553-B1A7-F25C3B397A09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C444BCCB-CF47-470A-B150-101FCB6DA351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C444BCCB-CF47-470A-B150-101FCB6DA351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C444BCCB-CF47-470A-B150-101FCB6DA351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C444BCCB-CF47-470A-B150-101FCB6DA351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A99D3C7-98CE-4553-B1A7-F25C3B397A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A99D3C7-98CE-4553-B1A7-F25C3B397A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A99D3C7-98CE-4553-B1A7-F25C3B397A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A99D3C7-98CE-4553-B1A7-F25C3B397A09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

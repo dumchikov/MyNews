@@ -1,0 +1,5 @@
+c:\Users\Max\documents\visual studio 2012\Projects\MyNews\MyNews.Services\bin\Debug\MyNews.Services.dll
+c:\Users\Max\documents\visual studio 2012\Projects\MyNews\MyNews.Services\bin\Debug\MyNews.Services.pdb
+c:\Users\Max\documents\visual studio 2012\Projects\MyNews\MyNews.Services\obj\Debug\MyNews.Services.csprojResolveAssemblyReference.cache
+c:\Users\Max\documents\visual studio 2012\Projects\MyNews\MyNews.Services\obj\Debug\MyNews.Services.dll
+c:\Users\Max\documents\visual studio 2012\Projects\MyNews\MyNews.Services\obj\Debug\MyNews.Services.pdb

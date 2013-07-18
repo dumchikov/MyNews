@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "News";
+}
+@model IEnumerable<MyNews.Models.NewsItem>
+
+<div class="row">
+    <div class="span2"></div>
+    <div class="span8">
+        <h1>Новости</h1>
+    </div>
+    <div class="span2">
+    </div>
+
+</div>
+<div class="row">
+    <div class="span2"></div>
+    <div class="span8">
+        <table class="table table-striped">
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>
+                    <img src="@m.ImageUrl" width="400" height="400"/>
+                    <td>
+                        <a href="@m.Link">@m.Title</a>
+
+                        <p>@m.Description</p>
+
+                        <span class="muted"><em>@m.PublishDate.ToString()</em></span>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="span2"></div>
+</div>
