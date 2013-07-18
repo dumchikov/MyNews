@@ -14,13 +14,13 @@
 </div>
 <div class="row">
     <div class="span2">
-        <!-- Put this script tag to the <head> of your page -->
+               <!-- Put this script tag to the <head> of your page -->
         <script type="text/javascript" src="//vk.com/js/api/openapi.js?97"></script>
 
         <script type="text/javascript">
             VK.init({ apiId: 3774385, onlyWidgets: true });
         </script>
-
+@* 
         <!-- Put this div tag to the place, where Auth block will be -->
         <div id="vk_auth"></div>
         <script type="text/javascript">
@@ -29,7 +29,13 @@
                     alert('user ' + data['uid'] + ' authorized');
                 }
             });
-        </script>
+        </script>*@
+        
+                                <!-- Put this div tag to the place, where the Comments block will be -->
+                        <div id="comments"></div>
+                        <script type="text/javascript">
+                            VK.Widgets.Comments("comments", { limit: 10, width: "520", attach: "*" });
+                        </script>
 
     </div>
     <div class="span8">
@@ -45,17 +51,13 @@
                         <p>@m.Description</p>
 
                         <span class="muted"><em>@m.PublishDate.ToString()</em></span>
-                        <!-- Put this div tag to the place, where the Like block will be -->
+
                         <div id="@Model.ToList().IndexOf(m)l"></div>
                         <script type="text/javascript">
                             VK.Widgets.Like("@Model.ToList().IndexOf(m)l", { type: "mini", height: 18 });
                         </script>
 
-                        <!-- Put this div tag to the place, where the Comments block will be -->
-                        <div id="@Model.ToList().IndexOf(m)c"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Comments("@Model.ToList().IndexOf(m)c", { limit: 10, width: "520", attach: "*" });
-                        </script>
+
                     </td>
                 </tr>
             }
