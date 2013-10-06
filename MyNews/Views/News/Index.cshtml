@@ -1,12 +1,12 @@
 ﻿@{
     ViewBag.Title = "News";
 }
-@model IEnumerable<MyNews.Models.NewsItem>
+@model MyNews.Models.NewsPageModel
 
 <div class="row">
     <div class="span2"></div>
     <div class="span8">
-        <h1>Новости</h1>
+        <h1>@Model.SourceName</h1>
     </div>
     <div class="span2">
     </div>
@@ -14,55 +14,25 @@
 </div>
 <div class="row">
     <div class="span2">
-               <!-- Put this script tag to the <head> of your page -->
-        <script type="text/javascript" src="//vk.com/js/api/openapi.js?97"></script>
-
-        <script type="text/javascript">
-            VK.init({ apiId: 3774385, onlyWidgets: true });
-        </script>
-@* 
-        <!-- Put this div tag to the place, where Auth block will be -->
-        <div id="vk_auth"></div>
-        <script type="text/javascript">
-            VK.Widgets.Auth("vk_auth", {
-                width: "200px", onAuth: function (data) {
-                    alert('user ' + data['uid'] + ' authorized');
-                }
-            });
-        </script>*@
-@*        
-                                <!-- Put this div tag to the place, where the Comments block will be -->
-                        <div id="comments"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Comments("comments", { limit: 10, width: "200", attach: "*" });
-                        </script>*@
-
+        <label>Источник</label>
+        @Html.DropDownList("source", Model.Sources, new {style="width:175px;", id="source"})
+        @Html.ActionLink("Добавить источник", "Create", "News", new {@class = "btn btn-primary"})
     </div>
     <div class="span8">
         <table class="table table-striped">
-            @foreach (var m in Model)
+            @foreach (var m in Model.NewsItems)
             {
                 <tr>
                     <td>
-                        <img src="@m.ImageUrl" width="400" height="400"/>
+                    <img src="@m.ImageUrl" width="400" height="400"/>
                     <td>
                         <a href="@m.Link" target="blank">@m.Title</a>
 
-                        <p>@m.Description</p>
+                        <p>@Html.Raw(m.Description)</p>
 
                         <span class="muted"><em>@m.PublishDate.ToString()</em></span>
 
                         <div id="@m.Id"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Like("@m.Id", {
-                                type: "mini",
-                                height: 18,
-                                pageTitle: "My news - создай свои новости!",
-                                text: "@m.Description",
-                                pageDescription: "@m.Description"
-                            }, @Model.ToList().IndexOf(m));
-                        </script>
-
 
                     </td>
                 </tr>
@@ -71,3 +41,10 @@
     </div>
     <div class="span2"></div>
 </div>
+
+<script type="text/javascript">
+    $("#source").change(function () {
+        location.href = "/news/index?id=" + $(this).val();
+    });
+
+</script>

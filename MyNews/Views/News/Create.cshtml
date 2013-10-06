@@ -1,0 +1,35 @@
+﻿@using MyNews.Models
+@model MyNews.Models.RssSource
+
+<div class="row">
+    <div class="span2"></div>
+    <div class="span8">
+        <h2>Создать источник</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.EditorForModel()
+            <input type="submit" value="Создать" class="btn btn-primary" />
+        }
+        
+        <h2>Все источники</h2>
+        <table class="table table-bordered">
+            @foreach (var s in (ICollection<RssSource>)ViewBag.Sources)
+            {
+                <tr>
+                    <td>@s.Id</td>
+                    <td>@s.Name</td>
+                    <td>@s.Url</td>
+                </tr>
+                
+            }
+        </table>
+        @Html.ActionLink("< Назад", "Index", "News", new {@class = "btn btn-primary"})
+
+    </div>
+    <div class="span2">
+    </div>
+
+</div>
+
+
+
